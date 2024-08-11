@@ -26,7 +26,7 @@ Proje şu anda .NET 8 versiyonunu kullanıyor. Eski versiyonlarda desteği yok.
 
 Bu proje bir template olarak NuGet package üzerinden yayımlandı. Kurduktan sonra VS2022 de yeni proje oluştur sekmenizde proje listenizde yer alacaktır.
 
-Kurmak için [NuGet (https://www.nuget.org/packages/NLabs.CarRental.Server)](https://www.nuget.org/packages/NLabs.CarRental.Server/) burayı ziyaret edebilirsiniz
+Kurmak için [NuGet (https://www.nuget.org/packages/NLabs.CleanArchitecture)](https://www.nuget.org/packages/NLabs.CleanArchitecture/) burayı ziyaret edebilirsiniz
 
 Ya da aşağıdaki kod bloğunu çalıştırarak kurabilirsiniz
 
@@ -36,11 +36,9 @@ dotnet new install Nlabs.CarRental.Server
 
 kurulum bittikten sonra `dotnet new list` ile VS2022 proje listesini görüntüleyip "ASP.NET Clean Architecture Solution" kısa adı "nlabs.carrental.server" proje template'ini arayabilirsiniz. Eğer listede bulduysanız artık VS2022 üzerinden yeni proje oluştur deyip proje arama çubuğunda "Clean Architecture" diye arayarak bulabilirsiniz.
 
-![Proje Template](https://github.com/NlabsNugetPackages/CarRental.Server.Template/blob/main/images/projeyibulma.png)
 
 Projeyi seçtikten sonra istediğiniz ismi verin örneğin `eCommerce`
 
-![Proje Structure](https://github.com/NlabsNugetPackages/CarRental.Server.Template/blob/main/images/projestructure.png)
 
 ## Projede kullanılan kütüphaneler
 - **EntityFrameworkCore**
@@ -53,14 +51,11 @@ Projeyi seçtikten sonra istediğiniz ismi verin örneğin `eCommerce`
 
 Proje başlangıçta MSSQL ile ayarlandı. MSSQL ile devam etmek istiyorsanız `appsetting.json` dosyasında ConnectionStrings kısmını kendinize göre düzenleyin
 
-![Connection String](https://github.com/NlabsNugetPackages/CarRental.Server.Template/blob/main/images/connectionstring.png)
 
 Eğer Database değiştirmek istiyorsanız kurulu NuGet package'ini Infrastructure katmanında değiştirip connection bilgisini değiştirmelisiniz.
 
 Login metodu ve User classı projede mevcut.
 Proje çalıştığında otomatik bir admin kullanıcısı oluşturur
-
-![Create First User](https://github.com/NlabsNugetPackages/CarRental.Server.Template/blob/main/images/createfirstuser.png)
 
 
 
