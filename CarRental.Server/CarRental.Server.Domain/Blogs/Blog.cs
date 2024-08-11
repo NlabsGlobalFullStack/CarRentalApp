@@ -1,4 +1,5 @@
 ﻿using CarRental.Server.Domain.Abstractions;
+using CarRental.Server.Domain.Dtos.Blog;
 using CarRental.Server.Domain.Shared;
 using CarRental.Server.Domain.Users;
 
@@ -15,4 +16,30 @@ public sealed class Blog : Entity
     public TagCloud TagClouds { get; private set; } = default!;
     public DateTime CreatedDate { get; private set; } = DateTime.Now;
     public List<Comment>? Comments { get; set; }
+
+    public void Create(CreateBlogDto dto)
+    {
+        Title = Name.Create(dto.Name);
+        AuthorId = new(dto.AuthorId);
+        BlogCategoryId = new(dto.BlogCategoryId);
+        CoverImageUrl = ImageUrl.Create(dto.ImageUrl);
+        Description = Description.Create(dto.Description);
+        TagClouds = new(dto.TagClouds);
+    }
+
+    public void Update(UpdateBlogDto dto)
+    {
+        Id = new(dto.Id);
+        Title = Name.Create(dto.Name);
+        AuthorId = new(dto.AuthorId);
+        BlogCategoryId = new(dto.BlogCategoryId);
+        CoverImageUrl = ImageUrl.Create(dto.ImageUrl);
+        Description = Description.Create(dto.Description);
+        TagClouds = new(dto.TagClouds);
+    }
+
+    public void Delete(DeleteBlogDto dto)
+    {
+        Id = new(dto.Id);
+    }
 }
