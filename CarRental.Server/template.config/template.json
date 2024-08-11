@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cuma Köse",
+    "classifications": [ "C#", "ASP.NET", "WebAPI", "CarRental.Server" ], 
+    "name": "ASP.NET Clean Architecture Solution",
+    "identity": "Nlabs.CarRental.Server",
+    "shortName": "nlabs.carrental.server",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sourceName": "CarRental.Server",
+    "preferNameDirectory": true
+  }
+  
