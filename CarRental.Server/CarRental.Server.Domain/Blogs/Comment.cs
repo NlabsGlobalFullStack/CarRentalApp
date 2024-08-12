@@ -12,6 +12,7 @@ public sealed class Comment : Entity
     public Description Description { get; private set; } = default!;
     public Email Email { get; private set; } = default!;
     public DateTime CreatedDate { get; private set; } = DateTime.Now;
+    public DateTime? DeletedAt { get; private set; }
 
     public void Create(CreateCommentDto dto)
     {
@@ -23,16 +24,30 @@ public sealed class Comment : Entity
 
     public void Update(UpdateCommentDto dto)
     {
-        Id = new(dto.Id);
-        Name = Name.Create(dto.Name);
-        BlogId = new(dto.BlogId);
-        Description = Description.Create(dto.Description);
-        Email = Email.Create(dto.Email);
+        if (Name.Value != dto.Name)
+        {
+            Name = Name.Create(dto.Name);
+        }
+
+        if (BlogId.Value != dto.BlogId)
+        {
+            BlogId = new Identity(dto.BlogId);
+        }
+
+        if (Description.Value != dto.Description)
+        {
+            Description = Description.Create(dto.Description);
+        }
+
+        if (Email.Value != dto.Email)
+        {
+            Email = Email.Create(dto.Email);
+        }
     }
 
     public void Delete(DeleteCommentDto dto)
     {
-        Id = new(dto.Id);
+        DeletedAt = DateTime.UtcNow;
     }
 
     public List<ListCommentDto> List(List<Comment> comments)
